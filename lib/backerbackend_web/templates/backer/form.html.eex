@@ -20,29 +20,18 @@
     <%= error_tag f, :display_name %>
   </div>
 
+
   <div class="form-group">
-    <%= label f, :address, class: "control-label" %>
-    <%= text_input f, :address, class: "form-control" %>
-    <%= error_tag f, :address %>
+    <%= label f, "Password", class: "control-label" %>
+    <%= password_input f, :password, class: "form-control" %>
+    <%= error_tag f, :password %>
   </div>
 
   <div class="form-group">
-    <%= label f, :pubkey, class: "control-label" %>
-    <%= text_input f, :pubkey, class: "form-control" %>
-    <%= error_tag f, :pubkey %>
-  </div>
-
-  <div class="form-group">
-    <%= label f, :privkey, class: "control-label" %>
-    <%= text_input f, :privkey, class: "form-control" %>
-    <%= error_tag f, :privkey %>
-  </div>
-
-  <div class="form-group">
-    <%= label f, :password_hash, class: "control-label" %>
-    <%= text_input f, :password_hash, class: "form-control" %>
-    <%= error_tag f, :password_hash %>
-  </div>
+    <%= label f, "Repeat Password", class: "control-label" %>
+    <%= password_input f, :password, class: "form-control" %>
+    <%= error_tag f, :password %>
+  </div>  
 
   <div class="form-group">
     <%= label f, :bio, class: "control-label" %>
@@ -66,24 +55,6 @@
     <%= label f, :email, class: "control-label" %>
     <%= text_input f, :email, class: "form-control" %>
     <%= error_tag f, :email %>
-  </div>
-
-  <div class="form-group">
-    <%= label f, :tokenfb, class: "control-label" %>
-    <%= text_input f, :tokenfb, class: "form-control" %>
-    <%= error_tag f, :tokenfb %>
-  </div>
-
-  <div class="form-group">
-    <%= label f, :metadata1, class: "control-label" %>
-    <%= text_input f, :metadata1, class: "form-control" %>
-    <%= error_tag f, :metadata1 %>
-  </div>
-
-  <div class="form-group">
-    <%= label f, :metadata2, class: "control-label" %>
-    <%= textarea f, :metadata2, class: "form-control" %>
-    <%= error_tag f, :metadata2 %>
   </div>
 
   <div class="form-group">

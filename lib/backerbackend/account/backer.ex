@@ -21,13 +21,32 @@ defmodule Backerbackend.Account.Backer do
     timestamps()
   end
 
+
+  @doc false
+  def changesetnew(backer, attrs) do
+    backer
+    |> cast(attrs, [:username, :display_name, :address, :pubkey, :privkey, :password_hash, :bio, :avatar, :background_img, :email, :tokenfb, :metadata1, :metadata2])
+    |> validate_required([:username, :email])
+    |> validate_provider
+    |> unique_constraint(:username, unique: :backer_username_index)
+    |> unique_constraint(:email, unique: :backer_email_index)
+  end
+
   @doc false
   def changeset(backer, attrs) do
     backer
     |> cast(attrs, [:username, :display_name, :address, :pubkey, :privkey, :password_hash, :bio, :avatar, :background_img, :email, :tokenfb, :metadata1, :metadata2])
-    |> validate_required([:username, :display_name, :address, :pubkey, :privkey, :password_hash, :bio, :avatar, :background_img, :email, :tokenfb, :metadata1, :metadata2])
-    |> unique_constraint(:username)
-    |> unique_constraint(:address)
-    |> unique_constraint(:email)
+    |> validate_required([:username, :email])
   end
+
+  def validate_provider(changeset) do 
+    uname = get_field(changeset, :username)
+    if Regex.match?(~r/^[0-9A-Za-z]+$/, uname) do
+      changeset
+    else
+      add_error(changeset, :username, "Username only can consisted of alphanumeric character")
+    end
+  end
+
+
 end

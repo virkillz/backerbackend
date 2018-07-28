@@ -169,7 +169,7 @@ defmodule Backerbackend.Account do
   """
   def create_backer(attrs \\ %{}) do
     %Backer{}
-    |> Backer.changeset(attrs)
+    |> Backer.changesetnew(attrs)
     |> Repo.insert()
   end
 
@@ -187,7 +187,7 @@ defmodule Backerbackend.Account do
   """
   def update_backer(%Backer{} = backer, attrs) do
     backer
-    |> Backer.changeset(attrs)
+    |> Backer.changesetnew(attrs)
     |> Repo.update()
   end
 

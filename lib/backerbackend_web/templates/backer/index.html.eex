@@ -23,19 +23,11 @@
                             <table class="table">
                                 <thead>
                                 <tr>
+                                  <th>ID</th>
                                   <th>Username</th>
                                   <th>Display name</th>
                                   <th>Address</th>
-                                  <th>Pubkey</th>
-                                  <th>Privkey</th>
-                                  <th>Password hash</th>
-                                  <th>Bio</th>
-                                  <th>Avatar</th>
-                                  <th>Background img</th>
                                   <th>Email</th>
-                                  <th>Tokenfb</th>
-                                  <th>Metadata1</th>
-                                  <th>Metadata2</th>
                             
                                   <th></th>
                                 </tr>
@@ -43,20 +35,12 @@
                                 <tbody>
                                   <%= for backer <- @backer do %>
                                       <tr>
+                                        <td><%= backer.id %></td>
                                         <td><%= backer.username %></td>
                                         <td><%= backer.display_name %></td>
                                         <td><%= backer.address %></td>
-                                        <td><%= backer.pubkey %></td>
-                                        <td><%= backer.privkey %></td>
-                                        <td><%= backer.password_hash %></td>
-                                        <td><%= backer.bio %></td>
-                                        <td><%= backer.avatar %></td>
-                                        <td><%= backer.background_img %></td>
                                         <td><%= backer.email %></td>
-                                        <td><%= backer.tokenfb %></td>
-                                        <td><%= backer.metadata1 %></td>
-                                        <td><%= backer.metadata2 %></td>
-                                  
+
                                         <td class="text-right">
                                           <span><%= link "Show", to: backer_path(@conn, :show, backer), class: "btn btn-default btn-xs" %></span>
                                           <span><%= link "Edit", to: backer_path(@conn, :edit, backer), class: "btn btn-default btn-xs" %></span>
