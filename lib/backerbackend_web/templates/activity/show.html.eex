@@ -1,0 +1,23 @@
+<h2>Show Activity</h2>
+
+<ul>
+  <li>
+    <strong>Activity ID:</strong>
+    <%= @activity.id %>
+  </li>
+  <li>
+    <strong>User ID:</strong>
+    <%= @activity.user_id %>
+  </li>
+  <li>
+    <strong>Time:</strong>
+    <%= @activity.inserted_at %>
+  </li>    
+  <li>
+    <strong>Activity:</strong>
+    <%= @activity.activity %>
+  </li>
+
+</ul>
+
+<span><%= link "Back", to: activity_path(@conn, :index) %></span>
