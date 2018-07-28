@@ -32,6 +32,9 @@ defmodule BackerbackendWeb.Router do
     resources "/activity", ActivityController, only: [:index, :show, :delete]
     resources "/user", UserController
     get "/logout", UserController, :logout 
+
+    resources "/backer", BackerController
+    
   end
 
 

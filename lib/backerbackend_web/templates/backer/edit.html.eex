@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-sm-12">
+        <h4 class="pull-left page-title">Edit Backer</h4>
+        <ol class="breadcrumb pull-right">
+            <li><a href="/">Phoenix Admin</a></li>
+            <li><a href="/#">Backer</a></li>
+            <li class="active">Edit</li>
+        </ol>
+    </div>
+</div>
+
+<%= render "form.html", Map.put(assigns, :action, backer_path(@conn, :update, @backer)) %>
+
+<span><%= link "Back", to: backer_path(@conn, :index) %></span>

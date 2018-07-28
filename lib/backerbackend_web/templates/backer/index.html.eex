@@ -1,0 +1,75 @@
+<!-- Page-Title -->
+<div class="row">
+    <div class="col-sm-12">
+        <h2 class="pull-left page-title">Listing Backer</h2>
+        <ol class="breadcrumb pull-right">
+            <li><a href="/">Phoenix Admin</a></li>
+            <li><a href="#">Backer</a></li>
+            <li class="active">Index</li>
+        </ol>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">  
+                <%= link "New Backer", to: backer_path(@conn, :new), class: "btn btn-primary waves-effect waves-light m-b-5" %>                                      
+            </div>          
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                  <th>Username</th>
+                                  <th>Display name</th>
+                                  <th>Address</th>
+                                  <th>Pubkey</th>
+                                  <th>Privkey</th>
+                                  <th>Password hash</th>
+                                  <th>Bio</th>
+                                  <th>Avatar</th>
+                                  <th>Background img</th>
+                                  <th>Email</th>
+                                  <th>Tokenfb</th>
+                                  <th>Metadata1</th>
+                                  <th>Metadata2</th>
+                            
+                                  <th></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                  <%= for backer <- @backer do %>
+                                      <tr>
+                                        <td><%= backer.username %></td>
+                                        <td><%= backer.display_name %></td>
+                                        <td><%= backer.address %></td>
+                                        <td><%= backer.pubkey %></td>
+                                        <td><%= backer.privkey %></td>
+                                        <td><%= backer.password_hash %></td>
+                                        <td><%= backer.bio %></td>
+                                        <td><%= backer.avatar %></td>
+                                        <td><%= backer.background_img %></td>
+                                        <td><%= backer.email %></td>
+                                        <td><%= backer.tokenfb %></td>
+                                        <td><%= backer.metadata1 %></td>
+                                        <td><%= backer.metadata2 %></td>
+                                  
+                                        <td class="text-right">
+                                          <span><%= link "Show", to: backer_path(@conn, :show, backer), class: "btn btn-default btn-xs" %></span>
+                                          <span><%= link "Edit", to: backer_path(@conn, :edit, backer), class: "btn btn-default btn-xs" %></span>
+                                          <span><%= link "Delete", to: backer_path(@conn, :delete, backer), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+                                        </td>
+                                      </tr>
+                                  <% end %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- End row -->

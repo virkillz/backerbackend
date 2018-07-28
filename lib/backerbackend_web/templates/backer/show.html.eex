@@ -1,0 +1,82 @@
+<div class="row">
+    <div class="col-sm-12">
+        <h4 class="pull-left page-title">Show Backer</h4>
+        <ol class="breadcrumb pull-right">
+            <li><a href="/">Phoenix Admin</a></li>
+            <li><a href="/#">Backer</a></li>
+            <li class="active">Show</li>
+        </ol>
+    </div>
+</div>
+
+<ul>
+
+  <li>
+    <strong>Username:</strong>
+    <%= @backer.username %>
+  </li>
+
+  <li>
+    <strong>Display name:</strong>
+    <%= @backer.display_name %>
+  </li>
+
+  <li>
+    <strong>Address:</strong>
+    <%= @backer.address %>
+  </li>
+
+  <li>
+    <strong>Pubkey:</strong>
+    <%= @backer.pubkey %>
+  </li>
+
+  <li>
+    <strong>Privkey:</strong>
+    <%= @backer.privkey %>
+  </li>
+
+  <li>
+    <strong>Password hash:</strong>
+    <%= @backer.password_hash %>
+  </li>
+
+  <li>
+    <strong>Bio:</strong>
+    <%= @backer.bio %>
+  </li>
+
+  <li>
+    <strong>Avatar:</strong>
+    <%= @backer.avatar %>
+  </li>
+
+  <li>
+    <strong>Background img:</strong>
+    <%= @backer.background_img %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @backer.email %>
+  </li>
+
+  <li>
+    <strong>Tokenfb:</strong>
+    <%= @backer.tokenfb %>
+  </li>
+
+  <li>
+    <strong>Metadata1:</strong>
+    <%= @backer.metadata1 %>
+  </li>
+
+  <li>
+    <strong>Metadata2:</strong>
+    <%= @backer.metadata2 %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: backer_path(@conn, :edit, @backer) %></span>
+<span><%= link "Back", to: backer_path(@conn, :index) %></span>

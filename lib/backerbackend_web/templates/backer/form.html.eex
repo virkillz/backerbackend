@@ -1,0 +1,94 @@
+  <div class="panel panel-default">
+      <div class="panel-heading"></div>
+      <div class="panel-body">
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= label f, :username, class: "control-label" %>
+    <%= text_input f, :username, class: "form-control" %>
+    <%= error_tag f, :username %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :display_name, class: "control-label" %>
+    <%= text_input f, :display_name, class: "form-control" %>
+    <%= error_tag f, :display_name %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :address, class: "control-label" %>
+    <%= text_input f, :address, class: "form-control" %>
+    <%= error_tag f, :address %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :pubkey, class: "control-label" %>
+    <%= text_input f, :pubkey, class: "form-control" %>
+    <%= error_tag f, :pubkey %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :privkey, class: "control-label" %>
+    <%= text_input f, :privkey, class: "form-control" %>
+    <%= error_tag f, :privkey %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :password_hash, class: "control-label" %>
+    <%= text_input f, :password_hash, class: "form-control" %>
+    <%= error_tag f, :password_hash %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :bio, class: "control-label" %>
+    <%= textarea f, :bio, class: "form-control" %>
+    <%= error_tag f, :bio %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :avatar, class: "control-label" %>
+    <%= text_input f, :avatar, class: "form-control" %>
+    <%= error_tag f, :avatar %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :background_img, class: "control-label" %>
+    <%= text_input f, :background_img, class: "form-control" %>
+    <%= error_tag f, :background_img %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :email, class: "control-label" %>
+    <%= text_input f, :email, class: "form-control" %>
+    <%= error_tag f, :email %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :tokenfb, class: "control-label" %>
+    <%= text_input f, :tokenfb, class: "form-control" %>
+    <%= error_tag f, :tokenfb %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :metadata1, class: "control-label" %>
+    <%= text_input f, :metadata1, class: "form-control" %>
+    <%= error_tag f, :metadata1 %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :metadata2, class: "control-label" %>
+    <%= textarea f, :metadata2, class: "form-control" %>
+    <%= error_tag f, :metadata2 %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>
+</div>
+</div>
