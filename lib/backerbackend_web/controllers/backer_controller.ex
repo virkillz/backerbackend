@@ -15,13 +15,29 @@ defmodule BackerbackendWeb.BackerController do
   end
 
   def create(conn, %{"backer" => backer_params}) do
-    case Account.create_backer(backer_params) do
-      {:ok, backer} ->
-        conn
-        |> put_flash(:info, "Backer created successfully.")
-        |> redirect(to: backer_path(conn, :show, backer))
-      {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "new.html", changeset: changeset)
+
+    password = backer_params["password"]
+    repassword = backer_params["repassword"]
+
+    if password == "" do
+      conn 
+      |> put_flash(:error, "Password cannot be empty")
+      |> redirect(to: backer_path(conn, :new))
+    else
+      if password != repassword do
+        conn 
+          |> put_flash(:error, "Password not match")
+          |> redirect(to: backer_path(conn, :new))
+      else
+        case Account.create_backer(backer_params) do
+          {:ok, backer} ->
+            conn
+            |> put_flash(:info, "Backer created successfully.")
+            |> redirect(to: backer_path(conn, :show, backer))
+          {:error, %Ecto.Changeset{} = changeset} ->
+            render(conn, "new.html", changeset: changeset)
+        end
+      end
     end
   end
 
